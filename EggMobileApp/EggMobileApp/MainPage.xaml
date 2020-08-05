@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             BackgroundImageSource="boiledegg.jpg"
+             x:Class="EggMobileApp.MainPage">
+        <StackLayout>
+        <StackLayout BackgroundColor="Black" Padding="30">
+            <Grid Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.ColumnSpan="2"
+                       Text="Egg Timer" 
+                       TextColor="Yellow"
+                       FontSize="40"
+                       FontAttributes="Bold"
+                       HorizontalOptions="EndAndExpand">
+            </Label>
+            <Image Grid.Column="2"
+                   Source="eggtimer.jpg"
+                   HeightRequest="50"
+                   HorizontalOptions="EndAndExpand">
+                
+            </Image>
+            </Grid>
+        </StackLayout>
+        <StackLayout Padding="30">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Label Grid.Row="0"
+                       Text="PLEASE BOIL YOUR WATER BEFORE YOU ENTER THE EGG'S"
+                       TextColor="White"
+                       FontSize="12"
+                       FontAttributes="Bold"
+                       HorizontalTextAlignment="Center"
+                       BackgroundColor="Black">
+                    
+                </Label>
+                <Label Grid.Row="1"
+                   Text="Select Egg Size"
+                   TextColor="Black"
+                   FontSize="25"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center">
+
+        </Label>
+        <Picker     Grid.Row="2"
+                    Title="Small, Medium, Large"
+                    FontSize="20"
+                    TextColor="Black"
+                    x:Name="EggSize"/>
+        <Label     Grid.Row="3" 
+                   Text="How Do You Like Your Eggs.?"
+                   TextColor="Black"
+                   FontSize="25"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center">
+
+        </Label>
+        <Picker     Grid.Row="4"
+                    Title="Soft, Medium, Hard"
+                    FontSize="20"
+                    TextColor="Black"
+                    x:Name="EggTexture"/>
+                
+        <Label Grid.Row="6"
+               Text="Timer"
+               FontSize="25"
+               TextColor="Black"
+               FontAttributes="Bold"
+               HorizontalOptions="Center">
+            
+        </Label>
+        <Label     Grid.Row="7"
+                   Text="{Binding Duration}"
+                   TextColor="Black"
+                   FontSize="80" 
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center">
+
+        </Label>
+        <Button     Grid.Row="9"
+                    Text="Start"
+                    FontSize="20"
+                    TextColor="Yellow"
+                    FontAttributes="Italic"
+                    Command="{Binding StartTimerCommand}"
+                    x:Name="startButton"
+                    Clicked="startButton_Clicked"
+                    BackgroundColor="black"
+                    CornerRadius="10">
+
+        </Button>
+            <Button Grid.Row="11"
+                    Text="Reset"
+                    TextColor="Yellow"
+                    FontSize="20"
+                    FontAttributes="Italic"
+                    x:Name="resetButton"
+                    Command="{Binding ResetTimer}"
+                    Clicked="resetButton_Clicked"
+                    BackgroundColor="Black"
+                    CornerRadius="10">
+            </Button>
+            </Grid>
+        </StackLayout>
+    </StackLayout> 
+</ContentPage>
